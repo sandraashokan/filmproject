@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1> FILM CITY </h1>
+<div class="container mt-3">
+  <div class="row">
+    {% for i in l %}
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ i.img.url }}" height="300px" width="150px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ i.title }}</h5>
+          <p class="card-text">Director : {{ i.director }}</p>
+          <a href="{% url 'Mapp:delete' i.id %}">delete</a>
+          <a href="{% url 'Mapp:edit' i.id %}">Edit</a>
+
+        </div>
+      </div>
+    </div>
+{% endfor %}
+     </div>
+</div>
+{% endblock %}

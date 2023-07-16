@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1>Add Films</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <form method=POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" name="t">
+                <div  class="form-text">Director</div>
+                <input type="text" class="form-control" name="d">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                <input type="file" class="form-control" name="m">
+            </div>
+            <div class="mb-3">
+                <input type="submit" class="form-control">
+            </div>
+        </form>
+
+</div>
+
+<!--<center>-->
+<!--<h2>Trending Movies</h2>-->
+<!--<form method="POST" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+<!--    <table>-->
+<!--        {{form}}-->
+<!--    </table>-->
+<!--    <button type="submit">submit</button>-->
+<!--</form>-->
+<!--    </center>-->
+{% endblock %}
